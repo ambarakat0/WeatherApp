@@ -1,0 +1,59 @@
+/** @format */
+
+body {
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+	font-size: 20px;
+}
+
+#app {
+	background-image: linear-gradient(to right bottom, #2980b9, #6dd5fa);
+	height: 100vh;
+	text-align: center;
+	position: relative;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+}
+
+.container {
+	width: 30%;
+}
+
+.holder {
+	display: grid;
+	grid-row-gap: 5px;
+	margin-bottom: 10px;
+}
+
+.headline {
+	font-size: 30px;
+}
+
+.label {
+	font-size: 15px;
+}
+
+.myInput {
+	border: none;
+	outline: none;
+	padding: 10px;
+	color: rgb(71, 71, 71);
+}
+
+.generate {
+	color: currentColor;
+	padding: 10px;
+	border-radius: 25px;
+	border: none;
+	outline: none;
+	justify-self: center;
+	cursor: pointer;
+	background-image: linear-gradient(to right bottom, #2980b9, #6dd5fa);
+	transition: all 0.2s;
+	box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.24);
+}
+
+.generate:hover {
+	transform: scale(1.05);
+}
