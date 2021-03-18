@@ -2,6 +2,7 @@
 
 //------------------------------ variable ------------------------------------//
 const KEY = 'fdcfe6b729dd6dbb081e284e73f72985';
+const apiKey = '&appid=fdcfe6b729dd6dbb081e284e73f72985&units=imperial';
 const baseURL = `https://api.openweathermap.org/data/2.5/weather?zip=`;
 
 const generate = document.querySelector('#generate');
@@ -17,7 +18,7 @@ let wrongZipMsg = 'Wrong zip code, try again please!';
 let NoDataMsg = 'There is no data saved!';
 
 let d = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+let newDate = d.getMonth() + 1 + '.' + d.getDate() + '.' + d.getFullYear();
 
 let zipCode;
 let userFeeling;
@@ -52,7 +53,7 @@ const fetchStoragetData = async () => {
 // fetch data from OpenWeatherMap, (using zip and usa as default)
 const getData = async (url, zip, key) => {
 	try {
-		const URL = `${url}${zip},us&appid=${key}`;
+		const URL = `${url}${zip},us${key}`;
 		const res = await fetch(URL);
 		const data = await res.json();
 		return {
@@ -103,7 +104,7 @@ const updateUI = async (data) => {
 // callback function which called after click on generte btn
 const callBack = async () => {
 	try {
-		const data = await getData(baseURL, zipCode, KEY);
+		const data = await getData(baseURL, zipCode, apiKey);
 		if (data) {
 			const changedData = await postData('./add', data);
 			updateUI(changedData.user);
